@@ -519,22 +519,46 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
                             </span>
                           </div>
                           <div className="grid grid-cols-1 gap-3">
-                            {item.deliverables.map((del, delIdx) => (
-                              <button
-                                key={delIdx}
-                                onClick={() => setSelectedDeliverable(del)}
-                                className="group/btn relative flex items-center justify-between px-6 py-5 bg-slate-900/5 hover:bg-slate-900 border border-slate-900/5 hover:border-slate-900 rounded-2xl text-left transition-all duration-300 overflow-hidden"
-                              >
-                                <div className="flex items-center gap-4 relative z-10">
-                                  <FileText className="w-5 h-5 text-slate-400 group-hover/btn:text-blue-400 transition-colors" />
-                                  <span className="text-[18px] font-[800] text-slate-700 group-hover/btn:text-white transition-colors">
-                                    {del.name}
-                                  </span>
-                                </div>
-                                <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover/btn:text-white relative z-10" />
-                                <div className={`absolute inset-0 bg-gradient-to-r from-${idx === 0 ? 'blue' : idx === 1 ? 'purple' : 'emerald'}-600/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity`} />
-                              </button>
-                            ))}
+                            {item.deliverables.map((del, delIdx) => {
+                              const isClickable = del.example && del.example.length > 100;
+
+                              if (!isClickable) {
+                                return (
+                                  <div
+                                    key={delIdx}
+                                    className="relative flex items-center justify-between px-6 py-5 bg-slate-50 border border-slate-100 rounded-2xl text-left transition-all duration-300 overflow-hidden"
+                                  >
+                                    <div className="flex items-center gap-4 relative z-10">
+                                      <FileText className="w-5 h-5 text-slate-300" />
+                                      <span className="text-[18px] font-[700] text-slate-400">
+                                        {del.name}
+                                      </span>
+                                    </div>
+                                    <div className="text-[11px] font-black text-slate-300 uppercase tracking-widest bg-slate-100/50 px-2 py-1 rounded">Planned</div>
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <button
+                                  key={delIdx}
+                                  onClick={() => setSelectedDeliverable(del)}
+                                  className="group/btn relative flex items-center justify-between px-6 py-5 bg-slate-900/5 hover:bg-slate-900 border border-slate-900/5 hover:border-slate-900 rounded-2xl text-left transition-all duration-300 overflow-hidden shadow-sm"
+                                >
+                                  <div className="flex items-center gap-4 relative z-10">
+                                    <FileText className="w-5 h-5 text-slate-400 group-hover/btn:text-blue-400 transition-colors" />
+                                    <span className="text-[18px] font-[800] text-slate-700 group-hover/btn:text-white transition-colors">
+                                      {del.name}
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center gap-2 relative z-10">
+                                    <span className="text-[11px] font-black text-blue-500 group-hover/btn:text-blue-400 uppercase tracking-widest opacity-0 group-hover/btn:opacity-100 transition-all">View Report</span>
+                                    <ArrowUpRight className="w-5 h-5 text-slate-300 group-hover/btn:text-white" />
+                                  </div>
+                                  <div className={`absolute inset-0 bg-gradient-to-r from-${idx === 0 ? 'blue' : idx === 1 ? 'purple' : 'emerald'}-600/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity`} />
+                                </button>
+                              );
+                            })}
                           </div>
                         </div>
                       )}
