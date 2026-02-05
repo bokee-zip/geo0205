@@ -44,12 +44,23 @@ const App: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+  const sectionStarts = [1, 3, 6, 9];
+
+  const getSlideNumber = (index: number) => {
+    if (index === 0) return "Cover";
+    const sectionIdx = sectionStarts.filter(s => s <= index).length;
+    if (sectionIdx === 0) return "";
+    const startIdx = sectionStarts[sectionIdx - 1];
+    if (index === startIdx) return `${sectionIdx}`;
+    return `${sectionIdx}-${index - startIdx}`;
+  };
+
   const getSectionLabel = (index: number) => {
     if (index === 0) return "Introduction";
-    if (index <= 2) return "GEO 개요";
-    if (index <= 5) return "현황 분석";
-    if (index <= 8) return "GEO 구축 가이드";
-    return "GEO 운영 매뉴얼";
+    if (index <= 2) return "1. GEO 개요";
+    if (index <= 5) return "2. 현황 분석";
+    if (index <= 8) return "3. 구축 가이드";
+    return "4. 운영 매뉴얼";
   };
 
   return (
@@ -78,8 +89,8 @@ const App: React.FC = () => {
                 }`}
             >
               <div className="flex gap-3">
-                <span className={`text-[11px] font-medium mt-0.5 ${currentSlide === idx ? 'text-[#0055FF]' : 'text-slate-300'}`}>
-                  {String(idx + 1).padStart(2, '0')}
+                <span className={`text-[11px] font-black mt-0.5 min-w-[28px] ${currentSlide === idx ? 'text-[#0055FF]' : 'text-slate-400'}`}>
+                  {getSlideNumber(idx)}
                 </span>
                 <span className="truncate">{slide.title}</span>
               </div>
@@ -100,10 +111,10 @@ const App: React.FC = () => {
           <div className="flex items-center h-14 px-8">
             <div className="flex h-full">
               {[
-                { label: "GEO 개요", range: [1, 2], icon: Info },
-                { label: "현황 분석", range: [3, 5], icon: BarChart2 },
-                { label: "구축 가이드", range: [6, 8], icon: Hammer },
-                { label: "운영 매뉴얼", range: [9, SLIDES.length - 1], icon: Play }
+                { label: "1. GEO 개요", range: [1, 2], icon: Info },
+                { label: "2. 현황 분석", range: [3, 5], icon: BarChart2 },
+                { label: "3. 구축 가이드", range: [6, 8], icon: Hammer },
+                { label: "4. 운영 매뉴얼", range: [9, SLIDES.length - 1], icon: Play }
               ].map((tab) => {
                 const isActive = currentSlide >= tab.range[0] && currentSlide <= tab.range[1];
                 return (
