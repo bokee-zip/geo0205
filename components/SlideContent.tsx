@@ -778,15 +778,15 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
                 <p className="text-slate-500 font-bold text-lg">{slide.subtitle}</p>
               </div>
 
-              <div className="flex gap-4 mb-1">
+              <div className="flex gap-6 mb-1">
                 {reports.map((report, idx) => (
-                  <div key={idx} className="bg-white border border-slate-200 px-5 py-2.5 rounded-xl flex items-center gap-3 hover:border-blue-400 hover:shadow-md transition-all cursor-default group">
-                    <div className="bg-blue-50 p-1.5 rounded-lg group-hover:bg-blue-100 transition-colors">
-                      <FileText size={16} className="text-blue-600" strokeWidth={2.5} />
+                  <div key={idx} className="bg-white border border-slate-200 px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-blue-400 hover:shadow-lg transition-all cursor-default group">
+                    <div className="bg-blue-50 p-2.5 rounded-xl group-hover:bg-blue-100 transition-colors">
+                      <FileText size={20} className="text-blue-600" strokeWidth={2.5} />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">{report.title}</span>
-                      <span className="text-[13px] font-bold text-slate-700 leading-none group-hover:text-blue-700 transition-colors">{report.schedule}</span>
+                      <span className="text-[14px] font-black text-slate-400 uppercase tracking-widest mb-1">{report.title}</span>
+                      <span className="text-[18px] font-black text-slate-800 leading-none group-hover:text-blue-700 transition-colors">{report.schedule}</span>
                     </div>
                   </div>
                 ))}
