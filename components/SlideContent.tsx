@@ -35,7 +35,7 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
           <div className="h-full flex flex-col justify-center items-start text-left space-y-12 py-10 px-10">
             <div className="space-y-6">
               <h2 className="text-[#0055FF] text-3xl font-black tracking-tighter">
-                FunETF <span className="text-slate-900 mx-2">×</span> E-TRIBE
+                FunETF <span className="text-slate-900 mx-2">×</span> ETRIBE
               </h2>
               <h1 className="text-7xl md:text-8xl font-black tracking-tighter text-[#111] leading-[1.05] max-w-5xl">
                 {slide.title}
@@ -926,7 +926,7 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
               <div className="bg-[#F0F5FF] px-20 py-6 rounded-full shadow-lg shadow-blue-50 border border-[#D0E0FF] flex items-center gap-6 transition-transform hover:scale-105">
                 <div className="w-6 h-6 rounded-full bg-[#0055FF] animate-pulse" />
                 <p className="text-[#0055FF] text-4xl font-black tracking-tighter uppercase">
-                  E-Tribe One-Team Governance
+                  ETRIBE One-Team Governance
                 </p>
               </div>
 

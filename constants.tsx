@@ -433,7 +433,7 @@ AI가 텍스트뿐만 아니라 이미지와 영상의 맥락을 읽을 수 있�
   },
   {
     id: 18,
-    title: "Why E-Tribe for GEO?",
+    title: "Why ETRIBE for GEO?",
     subtitle: "Fun ETF GEO를 이트라이브와 함께해야 하는 이유",
     type: 'service-loop',
     content: "전략 수립부터 실시간 모니터링 및 마크업 최적화까지 단절 없는 원팀 운영을 통해\n변화하는 AI 환경에서 브랜드의 정보 주권과 압도적인 기술 우위를 보장합니다.",
