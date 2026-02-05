@@ -312,55 +312,59 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
               <p className="text-slate-500 font-bold text-xl">{slide.subtitle}</p>
             </div>
 
-            <div className="flex-1 grid grid-cols-4 gap-4 items-stretch py-2">
+            <div className="flex-1 grid grid-cols-4 gap-6 items-stretch py-4">
               {slide.items?.map((step, idx) => (
-                <div key={idx} className={`relative flex flex-col px-6 py-6 rounded-[2.5rem] border transition-all duration-300 ${idx === 1 ? 'bg-rose-50 border-rose-200 shadow-xl shadow-rose-100/50' : 'bg-white border-slate-100 shadow-sm hover:shadow-md'}`}>
-                  {/* Image Placeholder - Full Width Top */}
+                <div key={idx} className={`relative flex flex-col rounded-[3rem] border transition-all duration-500 hover:-translate-y-2 ${idx === 1 ? 'bg-rose-50 border-rose-200 shadow-xl shadow-rose-100/50' : 'bg-white border-slate-100 shadow-sm hover:shadow-xl'}`}>
+                  {/* Larger Image Section */}
                   <div
-                    className={`w-full h-48 bg-slate-100 rounded-3xl mb-6 flex items-center justify-center border border-slate-200 overflow-hidden relative group flex-shrink-0 ${(step as any).image ? 'cursor-pointer' : ''}`}
+                    className={`w-full h-64 bg-slate-100 rounded-t-[3rem] flex items-center justify-center overflow-hidden relative group cursor-pointer`}
                     onClick={() => (step as any).image && setSelectedImage((step as any).image)}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-50">
+                    <div className="absolute inset-0">
                       {(step as any).image ? (
-                        <img src={(step as any).image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src={(step as any).image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       ) : (
-                        <ImageIcon className="w-12 h-12 text-slate-300" />
+                        <div className="w-full h-full flex items-center justify-center bg-slate-50">
+                          <ImageIcon className="w-16 h-16 text-slate-200" />
+                        </div>
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-colors" />
                     </div>
-                    {/* <img src="..." alt="" className="w-full h-full object-cover" /> */}
 
-                    <div className="absolute top-4 left-4">
-                      <span className={`text-[20px] font-black px-2.5 py-1 rounded-full backdrop-blur-md ${idx === 1 ? 'bg-rose-500/90 text-white' : 'bg-slate-900/10 text-slate-500'}`}>
+                    <div className="absolute top-6 left-6 z-10">
+                      <span className={`text-[18px] font-black px-4 py-1.5 rounded-full shadow-lg backdrop-blur-md ${idx === 1 ? 'bg-rose-500 text-white' : 'bg-white/90 text-slate-900 border border-slate-100'}`}>
                         STEP 0{idx + 1}
                       </span>
                     </div>
                   </div>
 
-                  <div className="space-y-3 px-2">
-                    <h4 className={`text-[24px] font-[900] tracking-tight ${idx === 1 ? 'text-rose-600' : 'text-[#111]'}`}>{step.label}</h4>
-                    <p className="text-[20px] font-bold text-slate-500 leading-snug">{step.value}</p>
-                  </div>
-
-                  {step.details && (
-                    <div className="mt-6 space-y-2 pt-4 border-t border-slate-100">
-                      {step.details.map((detail, dIdx) => (
-                        <div key={dIdx} className="flex items-center gap-2">
-                          <div className={`w-1.5 h-1.5 rounded-full ${idx === 1 ? 'bg-rose-400' : 'bg-blue-300'}`} />
-                          <span className="text-[20px] font-medium text-slate-400">{detail}</span>
-                        </div>
-                      ))}
+                  <div className="p-8 flex flex-col flex-1">
+                    <div className="space-y-4 text-center">
+                      <h4 className={`text-[28px] font-[950] tracking-tight leading-tight ${idx === 1 ? 'text-rose-600' : 'text-slate-900'}`}>{step.label}</h4>
+                      <p className="text-[20px] font-bold text-slate-500 leading-snug">{step.value}</p>
                     </div>
-                  )}
+
+                    {step.details && (
+                      <div className="mt-8 space-y-3 pt-6 border-t border-slate-100/80 flex-1">
+                        {step.details.map((detail, dIdx) => (
+                          <div key={dIdx} className="flex items-center justify-center gap-3">
+                            <div className={`w-2 h-2 rounded-full flex-shrink-0 ${idx === 1 ? 'bg-rose-400' : 'bg-[#0055FF]'}`} />
+                            <span className="text-[19px] font-semibold text-slate-400 leading-tight">{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className={`mt-8 flex justify-center opacity-10 group-hover:opacity-30 transition-opacity`}>
+                      {idx === 0 ? <Terminal size={28} /> : idx === 1 ? <Database size={28} /> : idx === 2 ? <Binary size={28} /> : <ExternalLink size={28} />}
+                    </div>
+                  </div>
 
                   {idx < 3 && (
-                    <div className="absolute top-1/2 -right-5 -translate-y-1/2 z-20 text-slate-200 pointer-events-none">
-                      <ArrowRight size={24} strokeWidth={3} />
+                    <div className="absolute top-[32%] -right-3 -translate-y-1/2 z-20 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-slate-300 border border-slate-100 pointer-events-none">
+                      <ChevronRight size={18} strokeWidth={4} />
                     </div>
                   )}
-
-                  <div className={`mt-auto pt-6 flex justify-end opacity-20 group-hover:opacity-40 transition-opacity`}>
-                    {idx === 0 ? <Terminal size={24} /> : idx === 1 ? <Database size={24} /> : idx === 2 ? <Binary size={24} /> : <ExternalLink size={24} />}
-                  </div>
                 </div>
               ))}
             </div>
