@@ -40,7 +40,7 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
               <h1 className="text-7xl md:text-8xl font-black tracking-tighter text-[#111] leading-[1.05] max-w-5xl">
                 {slide.title}
               </h1>
-              <p className="text-3xl text-slate-500 font-bold max-w-4xl leading-relaxed">
+              <p className="text-3xl text-slate-500 font-bold leading-relaxed">
                 {slide.subtitle}
               </p>
             </div>
