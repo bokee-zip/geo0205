@@ -331,11 +331,7 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-colors" />
                     </div>
 
-                    <div className="absolute top-6 left-6 z-10">
-                      <span className={`text-[18px] font-black px-4 py-1.5 rounded-full shadow-lg backdrop-blur-md ${idx === 1 ? 'bg-rose-500 text-white' : 'bg-white/90 text-slate-900 border border-slate-100'}`}>
-                        STEP 0{idx + 1}
-                      </span>
-                    </div>
+
                   </div>
 
                   <div className="p-8 flex flex-col flex-1">
