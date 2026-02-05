@@ -8,7 +8,7 @@ export const SLIDES: SlideData[] = [
     title: "[삼성자산운용 Fun ETF GEO 최적화 제안]",
     subtitle: "AI 시대의 브랜드 정보 주권 확보 및 디지털 영향력 극대화를 위한 전략적 GEO 도입",
     type: 'title',
-    content: "제안사: 이트라이브 (E-TRIBE)\n제시일: 2025년 2월\n대상: 삼성자산운용 마케팅 본부"
+    content: " "
   },
 
   /* --- SECTION I: GEO 개요 --- */
@@ -57,14 +57,14 @@ export const SLIDES: SlideData[] = [
     title: "AI 검색 엔진 현황 진단",
     subtitle: "우리 브랜드는 AI에게 어떻게 읽히고 있는가?",
     type: 'title',
-    content: "1. 동종 서비스 LLM 인용 현황 (ChatGPT, Gemini, Claude, Perplexity)\n2. As-is vs 경쟁사 GEO 점수 비교 분석"
+    content: "1. 동종 서비스 LLM 인용 현황 \n2. Fun ETF vs 경쟁사 GEO 점수 비교 분석"
   },
   {
     id: 101,
     title: "동종 서비스 현황 (LLM 인용 현황)",
     subtitle: "4대 주요 LLM의 검색 답변 내 브랜드 노출 및 인용 실태",
     type: 'image-grid',
-    content: "각 엔진별 답변에서 우리 브랜드의 실질적 인용(Citation) 여부를 확인합니다.",
+    content: "Claude, Gemini 미노출",
     images: [
       "/5-1.png",
       "/5-2.png",
@@ -72,10 +72,10 @@ export const SLIDES: SlideData[] = [
       "/5-4.png"
     ],
     items: [
-      { label: "ChatGPT-4o", value: "노출 순위 2위 / 기술적 인용 부재" },
-      { label: "Claude 3.5", value: "정보 요약 누락 / 단순 브랜드 나열" },
-      { label: "Gemini 1.5", value: "구조화 데이터 수집 실패 / 오정보 감지" },
-      { label: "Perplexity", value: "실시간 데이터 출처 불분명" }
+      { label: "ChatGPT-4o", value: "노출 순위 2위" },
+      { label: "Claude 3.5", value: "미노출" },
+      { label: "Gemini 1.5", value: "미노출" },
+      { label: "Perplexity", value: "노출 순위 4위" }
     ]
   },
   {
@@ -85,8 +85,8 @@ export const SLIDES: SlideData[] = [
     type: 'image-grid',
     content: "기술적 마크업, 정보 신뢰도, 엔티티 연결성 등 5대 지표 기준 점수 비교",
     images: [
-      "https://images.unsplash.com/photo-1551288049-bbbda536639a?auto=format&fit=crop&q=80&w=800", // Chart 1
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"  // Chart 2
+      "/6-1.png",
+      "/6-2.png"
     ],
     items: [
       { label: "삼성자산운용 (As-is)", value: "GEO Score: 3.2/10.0 (위험)" },
@@ -100,7 +100,7 @@ export const SLIDES: SlideData[] = [
     title: "GEO 구축 가이드",
     subtitle: "AI가 우리 브랜드를 '업계 표준'으로 인식하게 만드는 체계적 가이드",
     type: 'title',
-    content: "Generative Engine Optimization (GEO) 구축 전 과정\n진단(P1) → 설계(P2) → 구축(P3) → 검증(P4) 4단계 프레임워크"
+    content: "Generative Engine Optimization (GEO) 구축"
   },
   {
     id: 4.5,
