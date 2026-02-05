@@ -28,25 +28,25 @@ export const SLIDES: SlideData[] = [
         label: "1. 질문 파악",
         value: "사용자의 자연어 질문에서 핵심 의도와 관련 키워드(엔티티)를 정밀 분석합니다.",
         details: ["Query Intent 분석", "핵심 엔티티 추출", "언어 모델 파싱"],
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+        image: "/1.png"
       },
       {
         label: "2. 정보 탐색",
         value: "학습 데이터 중 신뢰도가 높은 '구조화된 정보 블록'을 최우선적으로 선별합니다.",
         details: ["RAG 엔진 가동", "고신뢰 DB 조회", "지식 그래프 매칭"],
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+        image: "/2.png"
       },
       {
         label: "3. 정보 조합",
         value: "선별된 정보 조각들을 논리적인 문장으로 조립하여 답변의 뼈대를 완성합니다.",
         details: ["콘텐츠 조각 정렬", "팩트 체크 알고리즘", "문맥 최적화"],
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800"
+        image: "/3.png"
       },
       {
         label: "4. 응답 생성",
         value: "최종 사용자에게 가장 적합한 형태의 맞춤형 정답과 근거를 함께 제공합니다.",
         details: ["자연어 문장 생성", "출처 인용(Citation)", "최종 답변 서빙"],
-        image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=800"
+        image: "/4.png"
       }
     ]
   },
