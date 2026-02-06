@@ -534,7 +534,6 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
                                         {del.name}
                                       </span>
                                     </div>
-                                    <div className="text-[11px] font-black text-slate-300 uppercase tracking-widest bg-slate-100/50 px-2 py-1 rounded">Planned</div>
                                   </div>
                                 );
                               }
@@ -976,8 +975,7 @@ const SlideContent: React.FC<{ slide: SlideData }> = ({ slide }) => {
 
 
               <div className="relative z-10 flex flex-col items-center gap-4">
-                <h4 className="text-3xl font-black text-[#111] tracking-tight">Visionary One-Team Strategy</h4>
-                <p className="text-slate-500 font-bold text-lg leading-relaxed max-w-4xl">
+                <p className="text-slate-800 font-[900] text-3xl leading-snug max-w-5xl tracking-tight">
                   전략 수립부터 실시간 모니터링 및 마크업 최적화까지 단절 없는 원팀 운영을 통해<br />
                   변화하는 AI 환경에서 브랜드의 정보 주권과 압도적인 기술 우위를 보장합니다.
                 </p>
